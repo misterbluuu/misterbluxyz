@@ -1,0 +1,173 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Neon Glitch Animation */
+@keyframes glitch {
+  0% { text-shadow: 2px 2px #00ffcc, -2px -2px #b200ff; }
+  25% { text-shadow: -2px -2px #00ffcc, 2px 2px #b200ff; }
+  50% { text-shadow: 2px -2px #00ffcc, -2px 2px #b200ff; }
+  75% { text-shadow: -2px 2px #00ffcc, 2px -2px #b200ff; }
+  100% { text-shadow: 2px 2px #00ffcc, -2px -2px #b200ff; }
+}
+
+.glitchy {
+  animation: glitch 1.2s infinite alternate;
+  text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #b200ff;
+}
+
+/* Neon green glitch text effect */
+.glitch-text {
+  position: relative;
+  font-size: 6rem;
+  font-weight: 900;
+  color: #39ff14; /* neon green */
+  text-transform: lowercase;
+  text-align: center;
+  letter-spacing: 2px;
+  text-shadow:
+    0 0 10px #39ff14,
+    0 0 20px #39ff14,
+    0 0 40px #39ff14;
+  -webkit-text-stroke: 3px black;
+  animation: glitch 2s infinite;
+}
+
+/* duplicate layers for RGB glitching */
+.glitch-text::before,
+.glitch-text::after {
+  content: 'misterblu.xyz';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: #39ff14;
+  -webkit-text-stroke: 3px black;
+  background: transparent;
+  overflow: hidden;
+  clip-path: polygon(0 0, 100% 0, 100% 30%, 0 30%);
+}
+
+.glitch-text::before {
+  text-shadow: -3px 0 cyan;
+  animation: glitchTop 2s infinite linear alternate-reverse;
+}
+
+.glitch-text::after {
+  text-shadow: 3px 0 purple;
+  animation: glitchBottom 1.8s infinite linear alternate-reverse;
+}
+
+/* main flicker + shift */
+@keyframes glitch {
+  0% { transform: none; }
+  15% { transform: skew(0.5deg, 0.5deg); }
+  30% { transform: translate(2px, -1px) skew(-0.5deg); }
+  45% { transform: translate(-2px, 1px); }
+  60% { transform: none; }
+  75% { transform: skew(0.5deg, -0.5deg); }
+  100% { transform: none; }
+}
+
+/* upper half RGB glitch flicker */
+@keyframes glitchTop {
+  0% { clip-path: polygon(0 0, 100% 0, 100% 40%, 0 40%); transform: translate(0); }
+  25% { clip-path: polygon(0 0, 100% 0, 100% 30%, 0 30%); transform: translate(-3px, -2px); }
+  50% { clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%); transform: translate(2px, 2px); }
+  75% { clip-path: polygon(0 0, 100% 0, 100% 25%, 0 25%); transform: translate(-1px, 1px); }
+  100% { clip-path: polygon(0 0, 100% 0, 100% 40%, 0 40%); transform: translate(0); }
+}
+
+/* lower half RGB glitch flicker */
+@keyframes glitchBottom {
+  0% { clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%); transform: translate(0); }
+  25% { clip-path: polygon(0 70%, 100% 70%, 100% 100%, 0 100%); transform: translate(3px, 2px); }
+  50% { clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%); transform: translate(-2px, -1px); }
+  75% { clip-path: polygon(0 75%, 100% 75%, 100% 100%, 0 100%); transform: translate(2px, -2px); }
+  100% { clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%); transform: translate(0); }
+}
+
+/* ---- Section Box Styling ---- */
+.section-box {
+  position: relative;
+  background: linear-gradient(145deg, #141414, #222);
+  border: 2px solid black;
+  border-radius: 12px;
+  box-shadow:
+    0 0 0 2px #fff,
+    0 0 12px rgba(255, 255, 255, 0.3);
+  padding: 2rem;
+  margin-top: 3rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.section-box:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 0 0 2px #fff,
+    0 0 18px rgba(255, 255, 255, 0.5);
+}
+
+/* subtle “depth” texture for the background */
+.section-box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+      circle at top left,
+      rgba(255, 255, 255, 0.08),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(0, 0, 0, 0.3),
+      transparent 40%
+    );
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+/* ---- Section Title Sticker ---- */
+.section-title-sticker {
+  position: absolute;
+  top: -1.5rem;
+  left: 1.5rem;
+  background: linear-gradient(145deg, #39ff14, #00ffcc);
+  color: black;
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.9rem;
+  padding: 0.6rem 1.2rem;
+  border: 2px solid black;
+  border-radius: 8px;
+  box-shadow:
+    0 0 0 2px #fff,
+    2px 2px 0 rgba(0, 0, 0, 0.4);
+  transform: rotate(-3deg);
+  z-index: 2;
+}
