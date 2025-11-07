@@ -1,7 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=Press+Start+2P&display=swap");
+@import "@fontsource/orbitron";
 @import "tailwindcss";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 
 :root {
   --background: #ffffff;
@@ -123,7 +126,7 @@ body {
     0 0 0 2px #fff,
     0 0 12px rgba(255, 255, 255, 0.3);
   padding: 2rem;
-  margin-top: 3rem;
+  margin-top: 2rem;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -171,3 +174,175 @@ body {
   transform: rotate(-3deg);
   z-index: 2;
 }
+
+ .font-display {
+          font-family: "Chakra Petch", sans-serif;
+        }
+
+        .section-title {
+          font-family: "Press Start 2P", cursive;
+          font-size: 1.2rem;
+          color: #39ff14;
+          text-shadow: 0 0 6px #39ff14, 0 0 12px #39ff14;
+          margin-bottom: 0.75rem;
+          text-transform: uppercase;
+        }
+
+        /* --- Halftone overlay --- */
+        .halftone-overlay {
+          background-image: radial-gradient(circle, rgba(0, 0, 0, 0.85) 1px, transparent 1px),
+            radial-gradient(circle, rgba(0, 0, 0, 0.85) 1px, transparent 1px);
+          background-size: 10px 10px, 5px 5px;
+          background-position: 0 0, 2.5px 2.5px;
+          mix-blend-mode: multiply;
+          opacity: 0.6;
+          pointer-events: none;
+        }
+        @keyframes grain {
+          0% {
+            transform: translate(0, 0);
+            opacity: 0.65;
+          }
+          25% {
+            transform: translate(-1%, 0.6%);
+            opacity: 0.6;
+          }
+          50% {
+            transform: translate(0.6%, -1%);
+            opacity: 0.68;
+          }
+          75% {
+            transform: translate(1%, 0.6%);
+            opacity: 0.62;
+          }
+          100% {
+            transform: translate(0, 0);
+            opacity: 0.65;
+          }
+        }
+        .animate-grain {
+          animation: grain 6s infinite linear;
+        }
+
+        /* --- Main Glitch Title --- */
+        .glitch-text {
+          position: relative;
+          font-size: clamp(4rem, 10vw, 8rem);
+          font-weight: 900;
+          color: #39ff14;
+          text-transform: lowercase;
+          letter-spacing: 2px;
+          text-align: center;
+          text-shadow: 0 0 10px #39ff14, 0 0 30px #39ff14;
+          -webkit-text-stroke: 3px black;
+          animation: glitch 2s infinite;
+        }
+
+        .glitch-text::before,
+        .glitch-text::after {
+          content: "misterblu.xyz";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          -webkit-text-stroke: 3px black;
+          color: #39ff14;
+          background: transparent;
+          overflow: hidden;
+        }
+
+        .glitch-text::before {
+          text-shadow: -3px 0 cyan;
+          animation: glitchTop 2s infinite linear alternate-reverse;
+        }
+        .glitch-text::after {
+          text-shadow: 3px 0 magenta;
+          animation: glitchBottom 1.8s infinite linear alternate-reverse;
+        }
+
+        @keyframes glitch {
+          0% {
+            transform: none;
+          }
+          15% {
+            transform: skew(0.5deg, 0.5deg);
+          }
+          30% {
+            transform: translate(2px, -1px) skew(-0.5deg);
+          }
+          45% {
+            transform: translate(-2px, 1px);
+          }
+          60% {
+            transform: none;
+          }
+          75% {
+            transform: skew(0.5deg, -0.5deg);
+          }
+          100% {
+            transform: none;
+          }
+        }
+        @keyframes glitchTop {
+          0% {
+            clip-path: polygon(0 0, 100% 0, 100% 40%, 0 40%);
+            transform: translate(0);
+          }
+          25% {
+            clip-path: polygon(0 0, 100% 0, 100% 30%, 0 30%);
+            transform: translate(-3px, -2px);
+          }
+          50% {
+            clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+            transform: translate(2px, 2px);
+          }
+          75% {
+            clip-path: polygon(0 0, 100% 0, 100% 25%, 0 25%);
+            transform: translate(-1px, 1px);
+          }
+          100% {
+            clip-path: polygon(0 0, 100% 0, 100% 40%, 0 40%);
+            transform: translate(0);
+          }
+        }
+        @keyframes glitchBottom {
+          0% {
+            clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%);
+            transform: translate(0);
+          }
+          25% {
+            clip-path: polygon(0 70%, 100% 70%, 100% 100%, 0 100%);
+            transform: translate(3px, 2px);
+          }
+          50% {
+            clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
+            transform: translate(-2px, -1px);
+          }
+          75% {
+            clip-path: polygon(0 75%, 100% 75%, 100% 100%, 0 100%);
+            transform: translate(2px, -2px);
+          }
+          100% {
+            clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%);
+            transform: translate(0);
+          }
+        }
+
+        .subtitle {
+  font-family: 'Orbitron', sans-serif;
+  color: #11f824;
+  text-shadow:
+    2px 2px 0 #000,
+    -2px -2px 0 #000,
+    0 0 10px #00b100;
+  font-size: 1.5rem;
+  margin-top: 0.25rem;
+  position: relative;
+  animation: flicker 10s infinite;
+}
+
+@keyframes flicker {
+  0%, 19%, 21%, 60%, 64%, 100% { opacity: 1; }
+  20%, 63% { opacity: 0.5; }
+}
+
