@@ -25,11 +25,9 @@ export default function TLDR() {
       color: "from-emerald-500/40 to-cyan-500/40",
       text: (
         <>
-          Tons of hardware ends up in the trash every year. The mission:{" "}
-          <span className="text-cyan-300 font-semibold">
-            keep hardware alive, circulating, and inspiring innovation
-          </span>{" "}
-          — instead of letting it go to waste.
+          Companies throw out a lot of perfectly good hardware. I want to
+            create infrastructure to get this hardware into the hands of people who will rebuild it into something amazing
+          instead of letting it go to waste.
         </>
       ),
     },
@@ -39,12 +37,10 @@ export default function TLDR() {
       color: "from-cyan-500/40 to-emerald-500/40",
       text: (
         <>
-          Build an open ecosystem that{" "}
-          <span className="text-emerald-300 font-semibold">
-            connects makers, recyclers, and learners
-          </span>{" "}
-          through sustainable hardware reuse, shared knowledge, and creative
-          experimentation.
+          I’m not looking to start a company—I’m looking to start a movement. Coding has become
+          easier than ever before, allowing anyone to build software. What we need now is to make
+          hardware just as accessible. By rethinking how we handle discarded hardware, we can empower
+          creators, students, and engineers to innovate without barriers.
         </>
       ),
     },
@@ -57,9 +53,8 @@ export default function TLDR() {
       icon: <Cpu className="w-6 h-6 text-emerald-300" />,
       bullets: [
         "Offer junk removal/startup cleanouts to recover hardware that would be trashed.",
-        "Build an online marketplace for makers to share or sell hardware.",
-        "Create makerspace partnerships to reuse parts collaboratively.",
-        "Host hardware hackathons in the Bay Area using solely recycled parts.",
+        "Create makerspace partnerships to reuse parts collaboratively on a wider scale.",
+        "Host hardware hackathons in the Bay Area using solely recycled parts to spark interest.",
       ],
       extra: ["🤖 Trashy Robot Fight Club", "🏎️ Robot/Car Obstacle Course"],
     },
@@ -68,9 +63,9 @@ export default function TLDR() {
       color: "from-emerald-600/40 to-cyan-500/40",
       icon: <Globe className="w-6 h-6 text-cyan-300" />,
       bullets: [
-        "Partner with companies to create build boxes and project kits.",
+        "Partner with companies to create build boxes and project kits out of recurring hardware waste.",
         "Expand beyond the Bay Area to reach new communities.",
-        "Increase marketplace variety and categories.",
+        "Build an online network to connect makerscompanies to save discarded hardware.",
       ],
     },
     {
@@ -78,9 +73,9 @@ export default function TLDR() {
       color: "from-cyan-700/40 to-emerald-600/40",
       icon: <Wrench className="w-6 h-6 text-emerald-300" />,
       bullets: [
-        "Launch tools for hardware creators — measurement and design apps.",
+        "Launch tools for hobbyist and professional hardware creators.",
         "Offer online resources and free courses for learners.",
-        "Deploy hardware drop boxes in rural areas to connect everyone.",
+        "Deploy hardware dropboxes and pickup points worldwide.",
       ],
     },
   ];
