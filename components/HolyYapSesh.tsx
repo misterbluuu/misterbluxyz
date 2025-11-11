@@ -114,7 +114,26 @@ export default function HolyYapSesh() {
           I’m not looking to just start a company—I’m looking to start a movement. Coding has become
           easier than ever before, allowing anyone to build software. What we need now is to make
           hardware just as accessible. By rethinking how we handle discarded hardware, we can empower
-          creators, students, and engineers to innovate without barriers.
+          creators, students, and engineers to innovate without barriers. </p>
+<p>.</p>
+          <p>This needs to be done in a strategic manner, though. While there are currently ways to buy new 
+          hardware at low prices (with even lower quality) and get it with overnight shipping, it causes a 
+          lot of waste. The packaging, the emissions required to ship something to the other side of the globe,
+           the contribution to the landfill when the part breaks because it’s shitty and it gets thrown out. This
+            project would be extremely flawed if more waste was created in an effort to avoid it. I want to ensure
+             that anything I do is a net positive on the environmental impact.</p>
+<p>.</p>
+<p>I’m also looking to get people excited about hardware. The AI boom has drawn many young professionals to the software
+ field, but the other engineering disciplines (specifically EE) are being left behind. Software can only be as good as
+  the hardware running it, so the need for exceptional hardware engineers is only growing. I want to show the next generation
+   of engineers how cool hardware can be, and how much of an impact its innovation can have on our future as a species. </p>
+<p>.</p>
+<p>Finally, I want to use this movement as a call to reform how we look at education, specifically in STEM. Programming classes
+ and software engineering degrees are becoming obsolete in the age of “vibe coding”. Even math up to a certain degree will
+  soon be heavily powered by AI. Something that can’t be done entirely online is bringing hands-on hardware learning to students
+   of all ages. Everyone knows even if teachers have the best of intentions, their resources can only go so far. I want to help
+    them be able to supply students with all sorts of hardware both to facilitate active learning, and to make learning fun.
+
         </p>
       </div>
 
